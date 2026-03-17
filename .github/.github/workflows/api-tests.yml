@@ -2,7 +2,7 @@ name: Fintech API Tests
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "master" ]
 
 jobs:
   test:
