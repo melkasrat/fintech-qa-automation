@@ -29,8 +29,12 @@ jobs:
 
       - name: Start API Server
         run: |
-          node fintech-api/server.js &
-          sleep 5
+        set -x
+        node fintech-api/server.js &
+        sleep 5
 
-      - name: Run Tests
-        run: npx playwright test
+      
+      - name: Run Tests (debug)
+        run: |
+          set -x
+          npx playwright test
