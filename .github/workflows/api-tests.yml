@@ -42,3 +42,6 @@ jobs:
 
       - name: Run Tests
         run: npx playwright test
+
+      - name: Debug files
+        run: ls -R
