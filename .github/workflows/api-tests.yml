@@ -12,16 +12,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Debug files (root)
+        run: ls -R
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
+      - name: Check Node version
+        run: node -v
+
       - name: Install dependencies
         run: npm install
 
-      - name: Install Playwright Browsers
+      - name: Debug after install
+        run: ls -R
+
+      - name: Install Playwright
         run: npx playwright install --with-deps
+
+      - name: Check fintech-api folder
+        run: ls fintech-api
 
       - name: Start API Server
         run: |
@@ -30,6 +42,3 @@ jobs:
 
       - name: Run Tests
         run: npx playwright test
-
-      - name: Debug files
-        run: ls -R
